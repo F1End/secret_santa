@@ -292,7 +292,7 @@ def main():
     
     print("🔒 Creating password-protected individual PDFs...")
     for p in participants:
-        p.pdf_password = generate_numeric_password(6)
+        p.pdf_password = generate_numeric_password(4)
         safe_name = "".join(c for c in p.name if c.isalnum() or c in (' ', '_', '-')).strip().replace(' ', '_')
         pdf_path = out_dir / f"secret_santa_{safe_name}.pdf"
         
