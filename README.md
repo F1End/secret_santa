@@ -1,4 +1,31 @@
-# 🎄 Automated Secret Santa CLI Application
+# Automated Secret Santa CLI Application
+
+Setup:
+1. Clone or download this project into your local directory.
+2. Install dependencies listed in requirements.txt
+3. Update config.json with your email/app-pw information
+4. Update/create the input files with your group
+
+Input files
+1. participants.csv - name-email pairs
+2. constraints.csv (optional) - to prevent people gifting each other (eg to make sure couples not gifting only among themselves)
+
+
+Optional arguments:
+--subject "Your Custom Subject": Override the default email subject line.
+
+--message "Additional text here": Inject custom instructions (e.g., budget limits or party date/time) into the email body after the second line.
+
+--output-dir "path/to/custom_folder": Specify a custom root directory for output folders.
+
+--dry-run : generating files only without senging emails
+
+Running:
+venv/bin/python run_secret_santa.py --participants participants.csv --constraints constraints.csv --config config.json --subject "🎄 Annual Family Secret Santa 2026!" --message "Just a reminder: The spending limit this year is $30, and exchange happens on Dec 24th!"
+
+
+
+
 
 A robust Python command-line application that automates your Secret Santa draw. It securely handles random assignment while respecting complex mutual constraints, generates password-protected individual PDFs with numeric PINs, creates a confidential master record, and emails results directly via your Gmail account.
 
@@ -29,24 +56,4 @@ secret-santa-app/
 ├── requirements.txt         # Python dependencies
 └── secret_santa_output/     # Generated timestamped output folders
 
-
-Setup:
-1. Clone or download this project into your local directory.
-2. Install dependencies listed in requirements.txt
-3. Update config.json with your email/app-pw information
-
-Input files
-1. participants.csv
-2. constraints.csv (optional) - to prevent people gifting each other 
-
-
-Optional arguments:
---subject "Your Custom Subject": Override the default email subject line.
-
---message "Additional text here": Inject custom instructions (e.g., budget limits or party date/time) into the email body after the second line.
-
---output-dir "path/to/custom_folder": Specify a custom root directory for output folders.
-
-Running:
-venv/bin/python run_secret_santa.py --participants participants.csv --constraints constraints.csv --config config.json --subject "🎄 Annual Family Secret Santa 2026!" --message "Just a reminder: The spending limit this year is $30, and exchange happens on Dec 24th!"
 
